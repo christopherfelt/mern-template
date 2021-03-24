@@ -1,2 +1,3 @@
 Setup Steps
 
+rm existing docker containers
