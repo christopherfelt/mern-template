@@ -1,3 +1,5 @@
 Setup Steps
 
 rm existing docker containers
+
+fill out .env files
