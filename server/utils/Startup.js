@@ -1,9 +1,8 @@
 import cors from "cors";
 import express from "express";
 import helmet from "helmet";
-import { RegisterControllers, Paths } from "./Setup";
-import auth0Provider from "@bcwdev/auth0provider";
-import cleanupService from "./services/TestCleanupService";
+import { RegisterControllers, Paths } from "./Setup.js";
+// import auth0Provider from "@bcwdev/auth0provider";
 
 export default class Startup {
   static ConfigureGlobalMiddleware(app) {
@@ -21,27 +20,19 @@ export default class Startup {
     app.use(cors(corsOptions));
 
     // NOTE Configures auth0 middleware that is used throughout controllers
-    // TODO Add Cognito Config Here
-    auth0Provider.configure({
-      domain: process.env.AUTH_DOMAIN,
-      clientId: process.env.AUTH_CLIENT_ID,
-      audience: process.env.AUTH_AUDIENCE,
-    });
+    // TODO Add Cognito Config Here Maybe
+    // auth0Provider.configure({
+    //   domain: process.env.AUTH_DOMAIN,
+    //   clientId: process.env.AUTH_CLIENT_ID,
+    //   audience: process.env.AUTH_AUDIENCE,
+    // });
   }
   static ConfigureRoutes(app) {
     let router = express.Router();
     RegisterControllers(router);
     app.use(router);
+    // NOTE Reseearch - express.static
     app.use("", express.static(Paths.Public));
-
-    // app.get("/cleanup", async (req, res, next) => {
-    //   try {
-    //     let data = await cleanupService.cleanupAsync();
-    //     res.send(data);
-    //   } catch (e) {
-    //     next(e);
-    //   }
-    // });
 
     Startup.registerErrorHandlers(app);
   }

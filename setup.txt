@@ -1,5 +1,5 @@
 Setup Steps
 
-rm existing docker containers
+rm existing docker containers with the same names
 
 fill out .env files

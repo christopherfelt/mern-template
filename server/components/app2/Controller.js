@@ -1,11 +1,11 @@
 import express from "express";
 import BaseController from "../../utils/BaseController.js";
-import app1Service from "./Service.js";
+import app2Service from "./Service.js";
 // import auth0Provider from "@bcwdev/auth0provider";
 
-export default class App1Controller extends BaseController {
+export default class App2Controller extends BaseController {
   constructor() {
-    super("api/v1/app1");
+    super("api/v1/app2");
     this.router
       .get("", this.getAll)
       // TODO: Need to check on cognito user management to see if this is possible
