@@ -18,6 +18,8 @@ export default class Startup {
     };
     app.use(helmet());
     app.use(cors(corsOptions));
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: false }));
 
     // NOTE Configures auth0 middleware that is used throughout controllers
     // TODO Add Cognito Config Here Maybe

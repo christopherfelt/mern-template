@@ -53,8 +53,8 @@ export function RegisterControllers(router) {
         let importHandler = await import(componentDirFiles + "/Controller.js"); //import the controller file from the component directory
         // console.log(importHandler.default);
         let component = new importHandler.default(); //get the default export in the file
+        //check and make sure that it is an instance of the base controller
         if (component instanceof BaseController) {
-          //check and make sure that it is an instance of the base controller
           router.use(component.mount, component.router); //Add it to the router
         }
       }

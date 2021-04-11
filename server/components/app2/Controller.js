@@ -52,9 +52,9 @@ export default class App2Controller extends BaseController {
     try {
       // Add you code here
       let data = await app1Service.edit(
-        req.params.id,
-        req.userInfo.email,
-        req.body
+        req.params.id
+        // req.userInfo.email,
+        // req.body
       );
     } catch (error) {
       next(error);
@@ -65,9 +65,9 @@ export default class App2Controller extends BaseController {
     try {
       // Add you code here
       let data = await app1Service.edit(
-        req.params.id,
-        req.userInfo.email,
-        req.body
+        req.params.id
+        // req.userInfo.email,
+        // req.body
       );
     } catch (error) {
       next(error);

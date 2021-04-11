@@ -20,6 +20,7 @@ export default class App1Controller extends BaseController {
       // Add you code here
       let data = await app1Service.findAll();
       return res.send(data);
+      // return res.send("Made it To Get All");
     } catch (error) {
       next(error);
     }
@@ -53,9 +54,10 @@ export default class App1Controller extends BaseController {
       // Add you code here
       let data = await app1Service.edit(
         req.params.id,
-        req.userInfo.email,
+        // req.userInfo.email,
         req.body
       );
+      res.send(data);
     } catch (error) {
       next(error);
     }
@@ -64,11 +66,12 @@ export default class App1Controller extends BaseController {
   async remove(req, res, next) {
     try {
       // Add you code here
-      let data = await app1Service.edit(
-        req.params.id,
-        req.userInfo.email,
-        req.body
+      let data = await app1Service.remove(
+        req.params.id
+        // req.userInfo.email,
+        // req.body
       );
+      res.send("Record Successfully Removed");
     } catch (error) {
       next(error);
     }

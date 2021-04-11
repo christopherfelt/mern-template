@@ -1,7 +1,7 @@
 import express from "express";
 // import Socket from "./services/SocketService";
 import Startup from "./utils/Startup.js";
-// import DbConnetion from "./utils/DbConfig";
+import DbConnection from "./utils/DbConfig.js";
 
 //create server & socketServer
 const app = express();
@@ -13,12 +13,12 @@ const PORT = process.env.PORT || 5000;
 // TODO Need to change socket
 // Socket.setIO(io);
 
+//Connect to Atlas MongoDB
+DbConnection.connect();
+
 // Start up Process
 Startup.ConfigureGlobalMiddleware(app);
 Startup.ConfigureRoutes(app);
-
-//Connect to Atlas MongoDB
-// DbConnection.connect();
 
 //Start Server
 // socketServer.listen(port, () => {
