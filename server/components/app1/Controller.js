@@ -1,6 +1,7 @@
 import express from "express";
 import BaseController from "../../utils/BaseController.js";
 import app1Service from "./Service.js";
+import { validateAuth } from "../../utils/UserAuthorization.js";
 // import auth0Provider from "@bcwdev/auth0provider";
 
 export default class App1Controller extends BaseController {
