@@ -1,6 +1,3 @@
-console.log("Creating ... ");
-console.log(process.argv);
-
 import fs from "fs";
 import ComponentCreator from "./ExpressComponentCreator.js";
 
@@ -10,6 +7,7 @@ let newDirName = process.argv[2];
 
 function createNewExpressComponent(newComponentName) {
   const cc = new ComponentCreator(newComponentName);
+  console.log("Creating ... " + newComponentName);
   cc.createNewDirectory();
   cc.createNewModelFile();
   cc.createNewControllerFile();

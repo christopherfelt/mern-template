@@ -2,6 +2,8 @@ Setup Steps
 
 rm existing docker containers with the same names
 
-fill out .env files
+create and fill out .env files
 
 setup mongodb
+
+npm install
