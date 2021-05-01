@@ -9,6 +9,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "scss": "^0.2.4",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
@@ -17,7 +18,7 @@
     "postbuild": "mv build/* ../client; rm -rf build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "create": "node utils/CreateComponents.js"
+    "create": "node utils/CreationDispatch.js"
   },
   "eslintConfig": {
     "extends": [
@@ -36,5 +37,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "type": "module"
 }
