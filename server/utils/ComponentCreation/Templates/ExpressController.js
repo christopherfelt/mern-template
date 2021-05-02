@@ -6,7 +6,7 @@ import { validateAuth } from "../../utils/UserAuthorization.js";
 
 export default class ${appName}Controller extends BaseController {
     constructor() {
-    super("api/v1/${appName}");
+    super("api/v1/${appName.toLowerCase()}");
     this.router
         .get("", this.getAll)
         // TODO: Need to check on cognito user management to see if this is possible
@@ -19,7 +19,7 @@ export default class ${appName}Controller extends BaseController {
     async getAll(req, res, next) {
         try {
             // Add you code here
-            let data = await app1Service.findAll();
+            let data = await ${appName}Service.findAll();
             return res.send(data);
             // return res.send("Made it To Get All");
         } catch (error) {
@@ -30,7 +30,7 @@ export default class ${appName}Controller extends BaseController {
     async getById(req, res, next) {
         try {
             // Add you code here
-            let data = await app1Service.findById(req.params.id);
+            let data = await ${appName}Service.findById(req.params.id);
             return res.send(data);
         } catch (error) {
             next(error);
@@ -43,7 +43,7 @@ export default class ${appName}Controller extends BaseController {
             //NOTE:  Need to check on cognito
             // req.body.creatorEmail = req.userInfo.email;
             // req.body.user = req.userInfo.email;
-            let data = await app1Service.create(req.body);
+            let data = await ${appName}Service.create(req.body);
             res.send(data);
         } catch (error) {
             next(error);
@@ -53,7 +53,7 @@ export default class ${appName}Controller extends BaseController {
     async edit(req, res, next) {
         try {
             // Add you code here
-            let data = await app1Service.edit(
+            let data = await ${appName}Service.edit(
             req.params.id,
             // req.userInfo.email,
             req.body
@@ -67,7 +67,7 @@ export default class ${appName}Controller extends BaseController {
     async remove(req, res, next) {
         try {
             // Add you code here
-            let data = await app1Service.remove(
+            let data = await ${appName}Service.remove(
             req.params.id
             // req.userInfo.email,
             // req.body

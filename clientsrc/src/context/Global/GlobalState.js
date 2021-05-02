@@ -1,10 +1,9 @@
-export default function ReactState(contextName) {
-  return `import React, { createContext, useReducer, useContext } from "react";
+import React, { createContext, useReducer, useContext } from "react";
 import axios from "axios";
 import GenerateRequestOptions from "../../../utils/GenerateRequestOptions";
 import { AccountContext } from "../Auth/Accounts";
 
-import ${contextName}Reducer from "./${contextName}Reducer";
+import SensorReducer from "./SensorReducer";
 
 const initialState = {
   item: {},
@@ -12,16 +11,16 @@ const initialState = {
   error: null,
 };
 
-export const ${contextName}Context = createContext(initialState);
+export const SensorContext = createContext(initialState);
 
-export const ${contextName}Provider = ({ children }) => {
-  const [state, dispatch] = useReducer(${contextName}Reducer, initialState);
+export const SensorProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(SensorReducer, initialState);
   const { getSession } = useContext(AccountContext);
 
   async function getItems() {
     try {
       let token = await getSession().session.header.Authorization;
-      const options = await GenerateRequestOptions("get", "items", token, {});
+      const options = await GenerateRequestOptions("get", "sensors", token, {});
       let res = await axios(options);
       dispatch({
         type: "GET_ITEMS",
@@ -36,16 +35,13 @@ export const ${contextName}Provider = ({ children }) => {
   }
 
   return (
-    <${contextName}Context.Provider
+    <SensorContext.Provider
       value={{
         items: state.items,
         getItems,
       }}
     >
       {children}
-    </${contextName}Context.Provider>
+    </SensorContext.Provider>
   );
-};  
-  
-  `;
-}
+};

@@ -12,24 +12,6 @@ export class Paths {
   }
 
   static get Components() {
-    // let componentDirs = fs.readdirSync(componentFolder, {
-    //   withFileTypes: true,
-    // });
-    // // this will be in a for loop
-    // // Need to confirm is a dir
-    // componentDirs.forEach(loadComponents);
-
-    // async function loadComponents(dirent) {
-    //   // console.log();
-    //   if (dirent.isDirectory()) {
-    //     let componentDirFiles = path.resolve(componentFolder, dirent.name);
-    //     let dirFiles = fs.readdirSync(componentDirFiles);
-    //     if (!dirFiles.includes("Controller.js")) return;
-    //     let importHandler = await import(componentDirFiles + "/Controller.js");
-    //     console.log(importHandler.default);
-    //   }
-    // }
-    // return dirFiles;
     return path.resolve(".", "components");
   }
 

@@ -10,6 +10,10 @@ const App1Schema = new Schema(
   { timestamps: true }
 );
 
+const App1 = mongoose.model("app1", App1Schema);
+
+export default App1;
+
 //#region UTILS
 
 // App1.virtual("creator", {
@@ -43,6 +47,6 @@ const App1Schema = new Schema(
 
 //#endregion UTILS
 
-const App1 = mongoose.model("app1", App1Schema);
+// const App1 = mongoose.model("app1", App1Schema);
 
-export default App1;
+// export default App1;

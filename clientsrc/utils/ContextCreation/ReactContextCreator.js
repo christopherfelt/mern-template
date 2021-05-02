@@ -11,6 +11,8 @@ export default class ReactContextCreator {
   createNewReactContext() {
     console.log("creating react context" + this.filePath);
     this.createNewDir();
+    this.createNewStateFile();
+    this.createNewReducerFile();
   }
 
   createNewDir() {
@@ -29,6 +31,13 @@ export default class ReactContextCreator {
   }
 
   createNewReducerFile() {
-    console.log("Creating reducer file");
+    let reducerText = this.templateGenerator.reactReducer();
+    fs.writeFile(
+      this.filePath + this.contextName + "Reducer.js",
+      reducerText,
+      function (err) {
+        if (err) throw err;
+      }
+    );
   }
 }

@@ -1,4 +1,5 @@
 import ReactState from "./Templates/ReactState.js";
+import ReactReducer from "./Templates/ReactReducer.js";
 
 export default class TemplateGenerator {
   constructor(contextName) {
@@ -7,5 +8,9 @@ export default class TemplateGenerator {
 
   reactState() {
     return ReactState(this.contextName);
+  }
+
+  reactReducer() {
+    return ReactReducer(this.contextName);
   }
 }

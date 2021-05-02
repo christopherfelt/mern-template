@@ -1,13 +1,13 @@
 import express from "express";
 import BaseController from "../../utils/BaseController.js";
-import app2Service from "./Service.js";
-// import auth0Provider from "@bcwdev/auth0provider";
+import CarService from "./Service.js";
+import { validateAuth } from "../../utils/UserAuthorization.js";
 
-export default class App2Controller extends BaseController {
+export default class CarController extends BaseController {
   constructor() {
-    super("api/v1/app2");
+    super("api/v1/car");
     this.router
-      .get("", this.getAll)
+      .get("", validateAuth, this.getAll)
       // TODO: Need to check on cognito user management to see if this is possible
       // .use(auth0Provider.getAuthorizedUserInfo)
       .post("", this.create)
@@ -18,8 +18,9 @@ export default class App2Controller extends BaseController {
   async getAll(req, res, next) {
     try {
       // Add you code here
-      let data = await app1Service.findAll();
-      return res.send(data);
+      // let data = await CarService.findAll();
+      // return res.send(data);
+      return res.send("Made it To Get All");
     } catch (error) {
       next(error);
     }
@@ -28,7 +29,7 @@ export default class App2Controller extends BaseController {
   async getById(req, res, next) {
     try {
       // Add you code here
-      let data = await app1Service.findById(req.params.id);
+      let data = await CarService.findById(req.params.id);
       return res.send(data);
     } catch (error) {
       next(error);
@@ -41,7 +42,7 @@ export default class App2Controller extends BaseController {
       //NOTE:  Need to check on cognito
       // req.body.creatorEmail = req.userInfo.email;
       // req.body.user = req.userInfo.email;
-      let data = await app1Service.create(req.body);
+      let data = await CarService.create(req.body);
       res.send(data);
     } catch (error) {
       next(error);
@@ -51,11 +52,12 @@ export default class App2Controller extends BaseController {
   async edit(req, res, next) {
     try {
       // Add you code here
-      let data = await app1Service.edit(
-        req.params.id
+      let data = await CarService.edit(
+        req.params.id,
         // req.userInfo.email,
-        // req.body
+        req.body
       );
+      res.send(data);
     } catch (error) {
       next(error);
     }
@@ -64,11 +66,12 @@ export default class App2Controller extends BaseController {
   async remove(req, res, next) {
     try {
       // Add you code here
-      let data = await app1Service.edit(
+      let data = await CarService.remove(
         req.params.id
         // req.userInfo.email,
         // req.body
       );
+      res.send("Record Successfully Removed");
     } catch (error) {
       next(error);
     }

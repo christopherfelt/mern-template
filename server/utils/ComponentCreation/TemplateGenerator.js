@@ -1,4 +1,6 @@
 import ExpressController from "./Templates/ExpressController.js";
+import ExpressService from "./Templates/ExpressService.js";
+import ExpressModel from "./Templates/ExpressModel.js";
 
 class TemplateGenerator {
   constructor(appName) {
@@ -7,6 +9,14 @@ class TemplateGenerator {
 
   expressController() {
     return ExpressController(this.appName);
+  }
+
+  expressService() {
+    return ExpressService(this.appName);
+  }
+
+  expressModel() {
+    return ExpressModel(this.appName);
   }
 }
 

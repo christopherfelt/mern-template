@@ -12,7 +12,7 @@ function creationDispatch(args) {
     console.log("creating component");
     let componentCreator = new ReactComponentCreator(args);
     componentCreator.createNewReactComponent();
-  } else if (args[0] == "state") {
+  } else if (args[0] == "context") {
     console.log("creating state");
     let contextCreator = new ReactContextCreator(args);
     contextCreator.createNewReactContext();
