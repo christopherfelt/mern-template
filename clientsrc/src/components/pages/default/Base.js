@@ -5,9 +5,9 @@ import Footer from "../../components/default/Footer";
 
 const Base = (props) => {
   return (
-    <div>
+    <div className="">
       <NavBar />
-      {props.children}
+      <div className="vh-100">{props.children}</div>
       <Footer />
     </div>
   );
