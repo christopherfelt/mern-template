@@ -9,17 +9,20 @@ const Footer = () => {
     <footer className="footer">
       <Container fluid>
         <Row className="py-3">
-          <Col xs={3} className="">
+          <Col sm={12} md={3} className="">
             <div className="d-flex align-items-center">
               <Link to="/">
-                <h3>Web App</h3>
+                <h4>Web App</h4>
               </Link>
-              <span className="ml-1">&#169; Web App by ... </span>
+              <span className="ml-1 light-gray-text-color">
+                &#169; Web App by ...{" "}
+              </span>
             </div>
           </Col>
-          <Col xs={6} className=""></Col>
+          <Col sm={12} md={6} className=""></Col>
           <Col
-            xs={3}
+            sm={12}
+            md={3}
             className="d-flex align-items-center justify-content-between"
           >
             <Link to="/">
