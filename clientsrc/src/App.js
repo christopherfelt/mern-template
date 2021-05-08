@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import { Account } from "./context/Auth/Accounts";
+
 import LandingPage from "./components/pages/default/LandingPage";
 import AboutPage from "./components/pages/default/AboutPage";
 import ContactPage from "./components/pages/default/ContactPage";
@@ -14,14 +16,16 @@ import "./App.scss";
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact component={LandingPage} />
-        <Route path="/about" exact component={AboutPage} />
-        <Route path="/contact" exact component={ContactPage} />
-        <Route path="/privacy" exact component={PrivacyPolicy} />
-        <Route path="/termsofservice" exact component={TermsOfService} />
-        <Route path="/auth" exact component={UserAuthorization} />
-      </Switch>
+      <Account>
+        <Switch>
+          <Route path="/" exact component={LandingPage} />
+          <Route path="/about" exact component={AboutPage} />
+          <Route path="/contact" exact component={ContactPage} />
+          <Route path="/privacy" exact component={PrivacyPolicy} />
+          <Route path="/termsofservice" exact component={TermsOfService} />
+          <Route path="/auth" exact component={UserAuthorization} />
+        </Switch>
+      </Account>
     </Router>
   );
 }

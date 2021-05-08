@@ -3,7 +3,7 @@ import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 
 const NavBar = () => {
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar bg="white" variant="light">
       <Navbar.Brand className="text-primary" href="/">
         Web App
       </Navbar.Brand>
