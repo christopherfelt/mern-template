@@ -9,6 +9,7 @@ import ContactPage from "./components/pages/default/ContactPage";
 import PrivacyPolicy from "./components/pages/default/PrivacyPolicy";
 import TermsOfService from "./components/pages/default/TermsOfService";
 import UserAuthorization from "./components/pages/default/UserAuth/UserAuth";
+import ProfilePage from "./components/pages/default/ProfilePage";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.scss";
@@ -24,6 +25,7 @@ function App() {
           <Route path="/privacy" exact component={PrivacyPolicy} />
           <Route path="/termsofservice" exact component={TermsOfService} />
           <Route path="/auth" exact component={UserAuthorization} />
+          <Route path="/profile" exact component={ProfilePage} />
         </Switch>
       </Account>
     </Router>
