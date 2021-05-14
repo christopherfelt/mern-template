@@ -12,7 +12,11 @@ import UserAuthorization from "./components/pages/default/UserAuth/UserAuth";
 import ProfilePage from "./components/pages/default/ProfilePage";
 
 import "bootstrap/dist/css/bootstrap.css";
+// import "./_variables.scss";
+// import "bootstrap/scss/bootstrap.scss";
+// import "./_bootswatch.scss";
 import "./App.scss";
+// import "./Bootstrap_Overrides.scss";
 
 function App() {
   return (

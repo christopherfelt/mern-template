@@ -28,25 +28,27 @@ const AboutPage = () => {
                 of my own dish ooooh feather moving feather!. Snob you for
                 another person do i like standing on litter cuz i sits when i
                 have spaces, my cat buddies have no litter i live in luxury cat
-                life yet catch mouse and gave it as a present. Loved it, hated
-                it, loved it, hated it. I could pee on this if i had the energy
-                munch, munch, chomp, chomp human clearly uses close to one life
-                a night no one naps that long so i revive by standing on
-                chestawaken! for it's 3am, time to create some chaos pushes butt
-                to face licks your face bite the neighbor's bratty kid. I shall
-                purr myself to sleep claws in the eye of the beholder. Side-eyes
-                your "jerk" other hand while being petted rub whiskers on bare
-                skin act innocent for ptracy, or chew on cable i shredded your
-                linens for you. Kitty ipsum dolor sit amet, shed everywhere shed
-                everywhere stretching attack your ankles chase the red dot,
-                hairball run catnip eat the grass sniff chase after silly
-                colored fish toys around the house where is it? i saw that bird
-                i need to bring it home to mommy squirrel! take a deep sniff of
-                sock then walk around with mouth half open and kitty pounce,
-                trip, faceplant you didn't see that no you didn't definitely
-                didn't lick, lick, lick, and preen away the embarrassment shred
-                all toilet paper and spread around the house get my claw stuck
-                in the dog's ear.
+                life yet catch mouse and gave it as a present.
+              </p>
+              <p>
+                Loved it, hated it, loved it, hated it. I could pee on this if i
+                had the energy munch, munch, chomp, chomp human clearly uses
+                close to one life a night no one naps that long so i revive by
+                standing on chestawaken! for it's 3am, time to create some chaos
+                pushes butt to face licks your face bite the neighbor's bratty
+                kid. I shall purr myself to sleep claws in the eye of the
+                beholder. Side-eyes your "jerk" other hand while being petted
+                rub whiskers on bare skin act innocent for ptracy, or chew on
+                cable i shredded your linens for you. Kitty ipsum dolor sit
+                amet, shed everywhere shed everywhere stretching attack your
+                ankles chase the red dot, hairball run catnip eat the grass
+                sniff chase after silly colored fish toys around the house where
+                is it? i saw that bird i need to bring it home to mommy
+                squirrel! take a deep sniff of sock then walk around with mouth
+                half open and kitty pounce, trip, faceplant you didn't see that
+                no you didn't definitely didn't lick, lick, lick, and preen away
+                the embarrassment shred all toilet paper and spread around the
+                house get my claw stuck in the dog's ear.
               </p>
             </div>
           </Col>
