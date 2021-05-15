@@ -1,241 +1,193 @@
-// Solar 4.6.0
+// Lux 5.0.1
 // Bootswatch
 
-// Variables ===================================================================
+@import "./../node_modules/bootstrap/scss/functions";
+@import "./../node_modules/bootstrap/scss/variables";
+@import "./../node_modules/bootstrap/scss/mixins";
 
-$web-font-path: "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" !default;
-@import url($web-font-path);
+@import "./variables";
 
-// Buttons =====================================================================
+@import "./../node_modules/bootstrap/scss/bootstrap.scss";
 
-// .btn {
-//   @each $color, $value in $theme-colors {
-//     &-#{$color} {
-//       @if $enable-gradients {
-//         background: $value linear-gradient(180deg, mix($white, $value, 15%), $value) repeat-x;
-//       } @else {
-//         background-color: $value;
-//       }
-//     }
-//   }
-// }
+// Variables
 
-// Tables ======================================================================
+$web-font-path: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" !default;
+@if $web-font-path {
+  @import url($web-font-path);
+}
 
-.table {
-  &-primary,
-  &-secondary,
-  &-dark,
-  &-success,
-  &-info,
-  &-warning,
-  &-danger {
-    color: $white;
-  }
+// Navbar
 
-  &-primary {
-    &,
-    > th,
-    > td {
-      background-color: $primary;
+.navbar {
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  &-nav {
+    .nav-link {
+      padding-top: 0.715rem;
+      padding-bottom: 0.715rem;
     }
   }
 
-  &-secondary {
-    &,
-    > th,
-    > td {
-      background-color: $secondary;
-    }
+  &-brand {
+    margin-right: 2rem;
+  }
+}
+
+.bg-primary {
+  background-color: theme-color("primary") !important;
+}
+
+.bg-light {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  &.navbar-fixed-top {
+    border-width: 0 0 1px;
   }
 
-  &-light {
-    &,
-    > th,
-    > td {
-      background-color: $light;
-    }
+  &.navbar-bottom-top {
+    border-width: 1px 0 0;
   }
+}
 
-  &-dark {
-    &,
-    > th,
-    > td {
-      background-color: $dark;
-    }
-  }
+.nav-item {
+  margin-right: 2rem;
+}
 
-  &-success {
-    &,
-    > th,
-    > td {
-      background-color: $success;
-    }
-  }
+// Buttons
 
-  &-info {
-    &,
-    > th,
-    > td {
-      background-color: $info;
-    }
-  }
+.btn {
+  font-size: $font-size-sm;
+  text-transform: uppercase;
 
-  &-danger {
-    &,
-    > th,
-    > td {
-      background-color: $danger;
-    }
+  &-sm {
+    font-size: 10px;
   }
 
   &-warning {
     &,
-    > th,
-    > td {
-      background-color: $warning;
-    }
-  }
-
-  &-active {
-    &,
-    > th,
-    > td {
-      background-color: $table-active-bg;
-    }
-  }
-
-  &-hover {
-    .table-primary:hover {
-      &,
-      > th,
-      > td {
-        background-color: darken($primary, 5%);
-      }
-    }
-
-    .table-secondary:hover {
-      &,
-      > th,
-      > td {
-        background-color: darken($secondary, 5%);
-      }
-    }
-
-    .table-light:hover {
-      &,
-      > th,
-      > td {
-        background-color: darken($light, 5%);
-      }
-    }
-
-    .table-dark:hover {
-      &,
-      > th,
-      > td {
-        background-color: darken($dark, 5%);
-      }
-    }
-
-    .table-success:hover {
-      &,
-      > th,
-      > td {
-        background-color: darken($success, 5%);
-      }
-    }
-
-    .table-info:hover {
-      &,
-      > th,
-      > td {
-        background-color: darken($info, 5%);
-      }
-    }
-
-    .table-danger:hover {
-      &,
-      > th,
-      > td {
-        background-color: darken($danger, 5%);
-      }
-    }
-
-    .table-warning:hover {
-      &,
-      > th,
-      > td {
-        background-color: darken($warning, 5%);
-      }
-    }
-
-    .table-active:hover {
-      &,
-      > th,
-      > td {
-        background-color: $table-active-bg;
-      }
+    &:hover,
+    &:not([disabled]):not(.disabled):active,
+    &:focus {
+      color: $white;
     }
   }
 }
 
-// Forms =======================================================================
+.btn-outline-secondary {
+  border-color: $gray-600;
+  color: $gray-600;
 
-.custom-control-input:checked ~ .custom-control-label::before {
-  background-color: $primary;
-  background-image: none;
-}
-
-.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
-  border-color: $primary;
-}
-
-.custom-control-input:not(:disabled):active ~ .custom-control-label::before {
-  background-color: $primary;
-  background-image: none;
-  border-color: $primary;
-}
-
-.custom-switch {
-  .custom-control-label::after {
-    background-color: rgba(255, 255, 255, 1);
-  }
-
-  .custom-control-input:checked ~ .custom-control-label::after {
-    background-color: rgba(255, 255, 255, 0.75);
-  }
-}
-
-// Indicators ==================================================================
-
-.alert {
-  border: none;
-  color: $white;
-
-  a,
-  .alert-link {
+  &:not([disabled]):not(.disabled):hover,
+  &:not([disabled]):not(.disabled):focus,
+  &:not([disabled]):not(.disabled):active {
+    background-color: $gray-400;
+    border-color: $gray-400;
     color: $white;
-    text-decoration: underline;
   }
 
-  @each $color, $value in $theme-colors {
-    &-#{$color} {
-      @if $enable-gradients {
-        background: $value
-          linear-gradient(180deg, mix($white, $value, 15%), $value)
-          repeat-x;
-      } @else {
-        background-color: $value;
-      }
-    }
+  &:not([disabled]):not(.disabled):focus {
+    box-shadow: 0 0 0 0.2rem rgba($gray-400, 0.5);
+  }
+}
+
+[class*="btn-outline-"] {
+  border-width: 2px;
+}
+
+.border-secondary {
+  border: 1px solid $gray-400 !important;
+}
+
+// Typography
+
+body {
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.text-secondary {
+  color: $body-color !important;
+}
+
+// Tables
+
+th {
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+}
+
+.table {
+  th,
+  td {
+    padding: 1.5rem;
   }
 
-  &-light {
-    &,
-    a:not(.btn),
-    .alert-link {
-      color: $body-bg;
+  &-sm {
+    th,
+    td {
+      padding: 0.75rem;
     }
   }
 }
+
+// Navs
+
+.dropdown-menu {
+  font-size: $font-size-sm;
+  text-transform: none;
+}
+
+// Indicators
+
+.badge {
+  padding-top: 0.28rem;
+
+  &-pill {
+    border-radius: 10rem;
+  }
+
+  &.bg-secondary,
+  &.bg-light {
+    color: $dark;
+  }
+}
+
+// Containers
+
+.list-group-item {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    color: inherit;
+  }
+}
+
+.card {
+  &-title,
+  &-header {
+    color: inherit;
+  }
+}
+
+@import "./../node_modules/bootstrap/scss/bootstrap.scss";

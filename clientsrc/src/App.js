@@ -11,12 +11,13 @@ import TermsOfService from "./components/pages/default/TermsOfService";
 import UserAuthorization from "./components/pages/default/UserAuth/UserAuth";
 import ProfilePage from "./components/pages/default/ProfilePage";
 
-import "bootstrap/dist/css/bootstrap.css";
-// import "./_variables.scss";
-// import "bootstrap/scss/bootstrap.scss";
 // import "./_bootswatch.scss";
-import "./App.scss";
+// import "bootstrap/scss/bootstrap.scss";
+// import "./App.scss";
 // import "./Bootstrap_Overrides.scss";
+
+import "bootstrap/dist/css/bootstrap.css";
+import "bootswatch/dist/lux/bootstrap.min.css";
 
 function App() {
   return (

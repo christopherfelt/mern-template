@@ -1,3 +1,7 @@
+.tab-color > a.active {
+  color: white !important;
+}
+
 .user-auth-card {
   width: 400px;
   height: 300px;

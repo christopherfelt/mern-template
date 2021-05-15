@@ -6,7 +6,8 @@ import Base from "./../Base";
 import Login from "./Login";
 import SignUp from "./SignUp";
 
-import "./UserAuth.scss";
+import "./UserAuth.css";
+import "../../../../_bootswatch.scss";
 
 const UserAuth = () => {
   const [key, setKey] = useState("login");
@@ -23,7 +24,7 @@ const UserAuth = () => {
                     activeKey={key}
                     onSelect={(k) => setKey(k)}
                     variant="pills"
-                    className="d-flex justify-content-around"
+                    className="d-flex justify-content-around tab-color"
                   >
                     <Tab eventKey="login" title="Login" className="p-3">
                       <Login />

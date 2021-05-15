@@ -21,8 +21,8 @@ const NavBar = () => {
   };
 
   return (
-    <Navbar bg="white" variant="light">
-      <Navbar.Brand className="text-primary" href="/">
+    <Navbar bg="white" variant="light" className="">
+      <Navbar.Brand className="" href="/">
         Web App
       </Navbar.Brand>
       <Nav className="ml-auto">
