@@ -7,7 +7,6 @@ import Login from "./Login";
 import SignUp from "./SignUp";
 
 import "./UserAuth.css";
-import "../../../../_bootswatch.scss";
 
 const UserAuth = () => {
   const [key, setKey] = useState("login");

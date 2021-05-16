@@ -21,7 +21,7 @@ const NavBar = () => {
   };
 
   return (
-    <Navbar bg="white" variant="light" className="">
+    <Navbar bg="white" variant="light" className="p-3">
       <Navbar.Brand className="" href="/">
         Web App
       </Navbar.Brand>

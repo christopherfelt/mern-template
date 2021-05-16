@@ -1,0 +1,23 @@
+.footer {
+  width: 100%;
+}
+
+a {
+  color: black !important;
+  text-decoration: none !important;
+  opacity: 0.6;
+  transition: 0.4s;
+}
+
+a:hover {
+  text-decoration: none !important;
+  opacity: 1;
+}
+
+a:visited {
+  opacity: 1;
+}
+
+.light-gray-text-color {
+  color: lightgray;
+}
