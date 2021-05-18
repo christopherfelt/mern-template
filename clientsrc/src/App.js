@@ -1,5 +1,6 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 import { Account } from "./context/Auth/Accounts";
 
@@ -15,17 +16,21 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootswatch/dist/lux/bootstrap.min.css";
 
 function App() {
+  const location = useLocation();
+
   return (
     <Account>
-      <Switch>
-        <Route path="/" exact component={LandingPage} />
-        <Route path="/about" exact component={AboutPage} />
-        <Route path="/contact" exact component={ContactPage} />
-        <Route path="/privacy" exact component={PrivacyPolicy} />
-        <Route path="/termsofservice" exact component={TermsOfService} />
-        <Route path="/auth" exact component={UserAuthorization} />
-        <Route path="/profile" exact component={ProfilePage} />
-      </Switch>
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.key}>
+          <Route path="/" exact component={LandingPage} />
+          <Route path="/about" exact component={AboutPage} />
+          <Route path="/contact" exact component={ContactPage} />
+          <Route path="/privacy" exact component={PrivacyPolicy} />
+          <Route path="/termsofservice" exact component={TermsOfService} />
+          <Route path="/auth" exact component={UserAuthorization} />
+          <Route path="/profile" exact component={ProfilePage} />
+        </Switch>
+      </AnimatePresence>
     </Account>
   );
 }
