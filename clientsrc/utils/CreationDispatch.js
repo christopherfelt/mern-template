@@ -4,6 +4,7 @@
 
 import ReactComponentCreator from "./ComponentCreation/ReactComponentCreator.js";
 import ReactContextCreator from "./ContextCreation/ReactContextCreator.js";
+import Setup from "./Setup/SetupFilesCreator.js";
 
 let argTrunc = process.argv.slice(2);
 
@@ -18,6 +19,8 @@ function creationDispatch(args) {
     contextCreator.createNewReactContext();
   } else if (args[0] == "setup") {
     console.log("creating setup files");
+    let setupCreator = new Setup();
+    setupCreator.createSetupFiles();
   }
 }
 

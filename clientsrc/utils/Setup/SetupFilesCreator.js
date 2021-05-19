@@ -1,27 +1,20 @@
+import fs from "fs";
+import TemplateGenerator from "./TemplateGenerator.js";
+
 export default class SetupFileCreator {
   constructor(args) {
-    this.componentFilePath = "src/components/";
+    // this.componentFilePath = "/";
+    this.templateGenerator = new TemplateGenerator();
   }
 
-  createNewReactComponent() {
-    // create new component directoy
-    // create new context directory
-    //
+  createSetupFiles() {
+    this.createDotEnvFile();
   }
 
-  createNewDir() {
-    console.log("Creating New Dir");
-  }
-
-  createNewJavascriptFile() {
-    console.log("Creating new Javascript");
-  }
-
-  createNewJSXFile() {
-    console.log("Creating new JSX file");
-  }
-
-  createNewStyleSheet() {
-    console.log("Creating New StyleSheet"); //scss
+  createDotEnvFile() {
+    let dotEnvText = this.templateGenerator.dotEnv();
+    fs.writeFile(".env2", dotEnvText, function (err) {
+      if (err) throw err;
+    });
   }
 }
