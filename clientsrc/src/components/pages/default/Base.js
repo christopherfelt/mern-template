@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { motion } from "framer-motion";
 
 import NavBar from "../../components/default/NavBar";
@@ -24,15 +24,19 @@ const baseVariants = {
 };
 
 const Base = (props) => {
+  useLayoutEffect(() => {
+    window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+  });
+
   return (
-    <div className="">
+    <div>
       <NavBar />
       <motion.div
-        className="vh-100"
         variants={baseVariants}
         initial="initial"
         animate="animate"
         exit="exit"
+        className="min-vh-100"
       >
         {props.children}
       </motion.div>
