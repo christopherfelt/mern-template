@@ -36,9 +36,11 @@ const SignUp = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button variant="primary" type="submit" className="float-right">
-          Sign Up
-        </Button>
+        <div className="d-flex justify-content-center pt-3">
+          <Button variant="primary" type="submit" className="float-right">
+            Sign Up
+          </Button>
+        </div>
       </Form>
     </>
   );

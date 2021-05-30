@@ -41,6 +41,34 @@ const Profile = () => {
                   <div className="p-4">
                     <div className="mb-5 pb-4">
                       <div className="pt-3 pb-1 my-3 border-bottom">
+                        <h5>Change Email</h5>
+                      </div>
+                      <div>
+                        <Form>
+                          <Form.Group>
+                            <Form.Control
+                              type="password"
+                              placeholder="Current Email"
+                            />
+                          </Form.Group>
+                          <Form.Group>
+                            <Form.Control
+                              type="password"
+                              placeholder="New Email"
+                            />
+                          </Form.Group>
+                          <Button
+                            variant="primary"
+                            type="submit"
+                            className="float-right"
+                          >
+                            Save
+                          </Button>
+                        </Form>
+                      </div>
+                    </div>
+                    <div className="mb-5 py-4">
+                      <div className="pt-3 pb-1 my-3 border-bottom">
                         <h5>Change Password</h5>
                       </div>
                       <div>
@@ -67,12 +95,12 @@ const Profile = () => {
                         </Form>
                       </div>
                     </div>
-                    <div className="mb-5 pb-4">
+                    <div className="mb-5 py-4">
                       <div className="pt-3 pb-1 my-3 border-bottom">
                         <h5>Logout</h5>
                       </div>
                       <div>
-                        <Button variant="primary" className="float-right mb-5">
+                        <Button variant="danger" className="float-right mb-5">
                           Logout
                         </Button>
                       </div>

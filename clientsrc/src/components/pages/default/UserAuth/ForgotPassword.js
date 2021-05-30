@@ -4,23 +4,14 @@ import { Form, Button } from "react-bootstrap";
 
 import { AccountContext } from "../../../../context/Auth/Accounts";
 
-const Login = () => {
+const ForgotPassword = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const { authenticate } = useContext(AccountContext);
+  //   const { authenticate } = useContext(AccountContext);
   const history = useHistory();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    authenticate(email, password)
-      .then((data) => {
-        console.log("logged in!", data);
-        history.push("/");
-      })
-      .catch((err) => {
-        console.error("Failed to log in");
-      });
   };
 
   return (
@@ -33,16 +24,14 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
-        <Form.Group>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
         <div className="d-flex justify-content-center pt-3">
-          <Button variant="primary" type="submit" className="" size="">
-            Login
+          <Button
+            variant="primary"
+            type="submit"
+            className="float-right"
+            size=""
+          >
+            Send
           </Button>
         </div>
       </Form>
@@ -50,4 +39,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgotPassword;
