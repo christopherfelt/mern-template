@@ -21,13 +21,21 @@ import "./UserAuth.css";
 const UserAuth = () => {
   const [key, setKey] = useState("login");
 
+  const onSelectHandler = (k) => {
+    setKey(k);
+  };
+
   return (
     <Base>
       <Container className="vh-100">
         <Row className="h-75">
           <Col className="h-100 d-flex justify-content-center align-items-center">
             <div className="user-auth-card border">
-              <Tab.Container defaultActiveKey="login" className="h-100">
+              <Tab.Container
+                activeKey={key}
+                onSelect={onSelectHandler}
+                className="h-100"
+              >
                 <div className="position-relative h-100 p-3">
                   <Row>
                     <Col className="d-flex justify-content-center">
@@ -48,6 +56,7 @@ const UserAuth = () => {
                           <Login />
                         </Tab.Pane>
                         <Tab.Pane eventKey="signup" className="pt-2 pb-3">
+                          {/* <SignUp switchPanel={(k) => onSelectHandler(k)} /> */}
                           <SignUp />
                         </Tab.Pane>
                         <Tab.Pane

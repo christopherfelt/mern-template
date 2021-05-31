@@ -7,6 +7,8 @@ import { AccountContext } from "../../../../context/Auth/Accounts";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const { authenticate } = useContext(AccountContext);
   const history = useHistory();
@@ -19,12 +21,19 @@ const Login = () => {
         history.push("/");
       })
       .catch((err) => {
-        console.error("Failed to log in");
+        console.error("Failed to log in: " + err.message);
+        setIsError(true);
+        setErrorMessage(err.message);
       });
   };
 
   return (
     <>
+      {isError && (
+        <div className="w-100 text-center text-danger mb-3 ">
+          <small>{errorMessage}</small>
+        </div>
+      )}
       <Form onSubmit={submitHandler}>
         <Form.Group>
           <Form.Control
