@@ -43,12 +43,14 @@ const SignUp = () => {
         </div>
       )}
 
-      <div
-        className={`w-100 text-center text-info mb-3  ${
-          !isSuccess ? "message-hidden" : "message-show"
-        }`}
-      >
-        <small>{verifyMessage}</small>
+      <div className="w-100 text-info position-relative">
+        <small
+          className={`message ${
+            !isSuccess ? "message-hidden" : "message-show"
+          }`}
+        >
+          {verifyMessage}
+        </small>
       </div>
 
       <Form

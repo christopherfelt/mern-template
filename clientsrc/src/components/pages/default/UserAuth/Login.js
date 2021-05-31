@@ -18,7 +18,7 @@ const Login = () => {
     authenticate(email, password)
       .then((data) => {
         console.log("logged in!", data);
-        history.push("/");
+        history.push("/Profile");
       })
       .catch((err) => {
         console.error("Failed to log in: " + err.message);

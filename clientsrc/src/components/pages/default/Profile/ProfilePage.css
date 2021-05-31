@@ -1,3 +1,7 @@
 .tab-color > div > a.active {
   color: white !important;
 }
+
+.extra-bottom-padding {
+  margin-bottom: 20%;
+}
