@@ -8,6 +8,7 @@ import "./SignUp.css";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordType, setPasswordType] = useState("password");
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
@@ -33,6 +34,14 @@ const SignUp = () => {
     //     setVerifyMessage("Verify Email Address");
     //   }
     // });
+  };
+
+  const changePasswordType = () => {
+    if (passwordType === "password") {
+      setPasswordType("text");
+    } else {
+      setPasswordType("password");
+    }
   };
 
   return (
@@ -66,10 +75,13 @@ const SignUp = () => {
         </Form.Group>
         <Form.Group>
           <Form.Control
-            type="password"
+            type={passwordType}
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
+          <small onClick={changePasswordType} className="float-right">
+            show
+          </small>
         </Form.Group>
         <div className="d-flex justify-content-center pt-3">
           <Button variant="primary" type="submit" className="float-right">
